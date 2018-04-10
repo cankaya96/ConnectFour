@@ -1041,7 +1041,7 @@ public class oyun extends javax.swing.JFrame {
     public void oyun_bittimi_kontrol(){
     buton1();
     buton2();
-    
+    kirmiziCapraz();
     
     
     }
@@ -1059,7 +1059,7 @@ public class oyun extends javax.swing.JFrame {
         
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if(dizi[i][j].getBackground().equals(dizi[i+1][j+1])&& (dizi[i+2][j+2].getBackground().equals(dizi[i+3][j+3].getBackground())) && dizi[i][j].getBackground().equals(Color.green)&& dizi[i+3][j+3].getBackground().equals(Color.green)){
+                if(dizi[i][j].getBackground().equals(dizi[i+1][j+1].getBackground())&& (dizi[i+2][j+2].getBackground().equals(dizi[i+3][j+3].getBackground())) && dizi[i][j].getBackground().equals(Color.green)&& dizi[i+3][j+3].getBackground().equals(Color.green)){
                     sayac2=3;
                     break;
                 }
@@ -1080,7 +1080,7 @@ public class oyun extends javax.swing.JFrame {
         else{
             for (int i = 0; i < 3; i++) {
             for (int j = 5; j >= 3; j--) {
-                if(dizi[i][j].getBackground().equals(dizi[i+1][j-1])&& dizi[i+2][j-2].getBackground().equals(dizi[i+3][j-3].getBackground().equals(Color.green)) && dizi[i][j].getBackground().equals(Color.green)){
+                if(dizi[i][j].getBackground().equals(dizi[i+1][j-1].getBackground())&& dizi[i+2][j-2].getBackground().equals(dizi[i+3][j-3].getBackground().equals(Color.green)) && dizi[i][j].getBackground().equals(Color.green)){
                     sayac2=3;
                 }
             }
@@ -1100,7 +1100,59 @@ public class oyun extends javax.swing.JFrame {
         
     }
     
-    
+     public void kirmiziCapraz(){
+        Button dizi[][]={{button1,button2,button3,button4,button5,button6},
+                        {button7,button8,button9,button10,button11,button12},
+                        {button13,button14,button15,button16,button17,button18},
+                        {button19,button20,button21,button22,button23,button24},
+                        {button25,button26,button27,button28,button29,button30},
+                        {button31,button32,button33,button34,button35,button36}
+            
+                        };
+        sayac2=0;
+        
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if(dizi[i][j].getBackground().equals(dizi[i+1][j+1].getBackground())&& (dizi[i+2][j+2].getBackground().equals(dizi[i+3][j+3].getBackground())) && dizi[i][j].getBackground().equals(Color.red)&& dizi[i+3][j+3].getBackground().equals(Color.red)){
+                    sayac2=3;
+                    break;
+                }
+                
+                
+        }
+            if(sayac2==3)
+                break;
+        }
+        if(sayac2>=3){
+                    
+            
+            JOptionPane.showMessageDialog(this, "Kırmızılar Kazandı", "Oyun Bitti", JOptionPane.INFORMATION_MESSAGE);
+            sonuç s = new sonuç();
+            s.setVisible(true);
+            this.dispose();
+                }
+        else{
+            for (int i = 0; i < 3; i++) {
+            for (int j = 5; j >= 3; j--) {
+                if(dizi[i][j].getBackground().equals(dizi[i+1][j-1].getBackground())&& dizi[i+2][j-2].getBackground().equals(dizi[i+3][j-3].getBackground().equals(Color.red)) && dizi[i][j].getBackground().equals(Color.red)){
+                    sayac2=3;
+                }
+            }
+            if(sayac2==3)
+                break;
+            sayac2=0;
+        }
+            if(sayac2>=3){
+                    
+            
+            JOptionPane.showMessageDialog(this, "Kırmızılar Kazandı", "Oyun Bitti", JOptionPane.INFORMATION_MESSAGE);
+            sonuç s = new sonuç();
+            s.setVisible(true);
+            this.dispose();
+                }
+        }
+        
+    }
     
     
     public void buton1(){
@@ -1137,7 +1189,7 @@ public class oyun extends javax.swing.JFrame {
         if(sayac2>=3){
                     
             
-            JOptionPane.showMessageDialog(this, "Yeşiller Kazandın", "Tebrikler", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Yeşiller Kazandı", "Oyun Bitti", JOptionPane.INFORMATION_MESSAGE);
             sonuç s = new sonuç();
             s.setVisible(true);
             this.dispose();
@@ -1170,7 +1222,7 @@ public class oyun extends javax.swing.JFrame {
                 sayac2=0;
             }
             if(sayac2==3){
-                JOptionPane.showMessageDialog(this, "Yeşiller Kazandın", "Tebrikler", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Yeşiller Kazandı", "Oyun Bitti", JOptionPane.INFORMATION_MESSAGE);
             sonuç s = new sonuç();
             s.setVisible(true);
             this.dispose();
@@ -1215,7 +1267,7 @@ public void buton2(){
         if(sayac2>=3){
                     
             
-            JOptionPane.showMessageDialog(this, "Kırmızılar Kazandı", "Tebrikler", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Kırmızılar Kazandı", "Oyun Bitti", JOptionPane.INFORMATION_MESSAGE);
             sonuç s = new sonuç();
             s.setVisible(true);
             this.dispose();
@@ -1248,7 +1300,7 @@ public void buton2(){
                 sayac2=0;
             }
             if(sayac2>=3){
-                JOptionPane.showMessageDialog(this, "Kırmızılar Kazandı", "Tebrikler", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Kırmızılar Kazandı", "Oyun Bitti", JOptionPane.INFORMATION_MESSAGE);
             sonuç s = new sonuç();
             s.setVisible(true);
             this.dispose();

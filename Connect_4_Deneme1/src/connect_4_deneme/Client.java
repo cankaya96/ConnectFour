@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static connect_4_deneme.Client.sInput;
 import game.oyun;
-
+//yeni yazdım
 /**
  *
  * @author INSECT
